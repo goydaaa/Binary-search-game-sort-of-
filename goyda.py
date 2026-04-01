@@ -1,18 +1,10 @@
 import random
-a = random.randint(1,100)
-b = random.randint(1,100)
-c = random.randint(1,100)
-d = random.randint(1,100)
-e = random.randint(1,100)
-f = random.randint(1,100)
-g = random.randint(1,100)
-h = random.randint(1,100)
-list = [a,b,c,d,e,f,g,h]
-list.sort()
+my_list = [random.randint(1, 100) for _ in range(8)]
+my_list.sort()
 num = random.randint(1,8)
-print (list)
-answer = list[num]
-print (answer)
+print (list) #just to see#1
+answer = my_list[num]
+print (answer) #just to see#2
 ingame = True
 print("This is a binary search game,try to guess using binary search")
 while ingame == True:
