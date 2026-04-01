@@ -1,18 +1,17 @@
 import random
-my_list = [random.randint(1, 100) for _ in range(8)]
+my_list = random.sample(range(1, 1000), 128)
 my_list.sort()
-num = random.randint(1,8)
-print (list) #just to see#1
-answer = my_list[num]
-print (answer) #just to see#2
+answer = random.choice(my_list)
+print(f"I generated 128 unique numbers between {my_list[0]} and {my_list[-1]}.")
+print("This is a binary search game. Try to guess using binary search!")
 ingame = True
-print("This is a binary search game,try to guess using binary search")
-while ingame == True:
-    guess = int(input("Try to guess the random number \n"))
-    if guess < answer:
-        print("Wrong, your guess is smaller")
+while ingame:  
+    guess = int(input("Try to guess the random number:\n"))
+    
+     if guess < answer:
+        print("Wrong, your guess is too small. Aim higher!")
     elif guess > answer:
-        print("Wrong, your guess is bigger")
+        print("Wrong, your guess is too big. Aim lower!")
     elif guess == answer:
-        print("YOU GUESSED IT")
-        ingame = False    
+        print("YOU GOT IT!")
+        ingame = False  
